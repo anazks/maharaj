@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maharajahub - Policies</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact Us - Maharajahub</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
@@ -26,150 +25,110 @@
         }
         
         header {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-color: #1a237e;
             color: white;
-            padding: 30px 0;
+            padding: 20px 0;
             text-align: center;
-            margin-bottom: 30px;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         header h1 {
-            font-size: 2.8rem;
             margin-bottom: 10px;
         }
         
-        header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
+        nav {
+            background-color: #283593;
+            padding: 10px 0;
         }
         
-        .nav-tabs {
+        nav ul {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-            gap: 10px;
+            list-style: none;
         }
         
-        .nav-tab {
-            padding: 12px 25px;
-            background: white;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        nav ul li {
+            margin: 0 15px;
         }
         
-        .nav-tab:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .nav-tab.active {
-            background: #1a2a6c;
+        nav ul li a {
             color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
         
-        .content-section {
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+        
+        .section {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            display: none;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        .content-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        h2 {
-            color: #1a2a6c;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        h3 {
-            color: #b21f1f;
-            margin: 25px 0 15px;
-        }
-        
-        p {
+        .section h2 {
+            color: #1a237e;
             margin-bottom: 15px;
-        }
-        
-        ul, ol {
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-        }
-        
-        .highlight {
-            background-color: #fff9e6;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #ffcc00;
-            margin: 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
         }
         
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
         
-        .contact-card {
-            background: #f8f9fa;
+        .info-card {
+            background: #e3f2fd;
             padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+            border-radius: 8px;
+            border-left: 4px solid #1a237e;
         }
         
-        .contact-card i {
-            font-size: 2rem;
-            color: #1a2a6c;
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: #1a237e;
+        }
+        
+        .policy-content, .terms-content, .cancellation-content {
+            padding: 15px 0;
+        }
+        
+        .policy-content h3, .terms-content h3, .cancellation-content h3 {
+            margin: 15px 0 10px;
+            color: #283593;
+        }
+        
+        .policy-content ul, .cancellation-content ul {
+            margin-left: 20px;
             margin-bottom: 15px;
         }
         
         footer {
+            background-color: #1a237e;
+            color: white;
             text-align: center;
-            margin-top: 60px;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
+            padding: 20px 0;
+            margin-top: 30px;
         }
         
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
+            nav ul {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .nav-tab {
-                padding: 10px 15px;
-                font-size: 0.9rem;
+            nav ul li {
+                margin: 5px 0;
             }
             
-            .content-section {
-                padding: 20px;
+            .contact-info {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -177,216 +136,163 @@
 <body>
     <header>
         <div class="container">
-            <h1><i class="fas fa-file-contract"></i> Maharajahub</h1>
-            <p>Wheel Aligment info</p>
-
-            <p>Policies and Terms of Service</p>
+            <h1>Maharajahub</h1>
+            <p>Your trusted shopping destination</p>
         </div>
     </header>
     
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#contact">Contact Information</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#cancellation">Cancellation & Refund</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="container">
-        <div class="nav-tabs">
-            <div class="nav-tab active" data-target="terms">
-                <i class="fas fa-balance-scale"></i> Terms & Conditions
-            </div>
-            <div class="nav-tab" data-target="privacy">
-                <i class="fas fa-user-shield"></i> Privacy Policy
-            </div>
-            <div class="nav-tab" data-target="shipping">
-                <i class="fas fa-truck"></i> Shipping Policy
-            </div>
-            <div class="nav-tab" data-target="contact">
-                <i class="fas fa-envelope"></i> Contact Us
-            </div>
-            <div class="nav-tab" data-target="refunds">
-                <i class="fas fa-undo"></i> Cancellation & Refunds
-            </div>
-        </div>
-        
-        <!-- Terms and Conditions -->
-        <div id="terms" class="content-section active">
-            <h2>Terms and Conditions</h2>
-            <p><strong>Effective Date:</strong> September 11, 2023</p>
-            
-            <p>Welcome to Maharajahub Pvt. Ltd. ("Company", "we", "us", "our"). By using our website, mobile app ("App"), products or services you agree to these Terms & Conditions. Please read carefully.</p>
-            
-            <h3>1. Acceptance</h3>
-            <p>By accessing or using our App or ordering products/services you agree to be bound by these Terms and any policies referenced herein (Privacy Policy, Shipping Policy, Cancellation & Refund Policy). If you do not agree, do not use our services.</p>
-            
-            <h3>2. Services</h3>
-            <p>We provide mobile app for wheel alignment services, booking, e-commerce, and related services. All service descriptions are indicative; availability and delivery depend on your location and other factors.</p>
-            
-            <h3>3. Accounts</h3>
-            <p>You may need to register to use parts of the App. You are responsible for keeping credentials secure and for all activity under your account. Notify us immediately of unauthorized use.</p>
-            
-            <h3>4. Orders & Payment</h3>
-            <p>Placing an order constitutes an offer to purchase. All prices are in INR and include taxes where mentioned. Payment is processed via our payment partners (e.g., Razorpay).</p>
-            
-            <h3>5. Intellectual Property</h3>
-            <p>All content, logos, designs, code and trademarks on the App are owned or licensed by us. You may not reproduce or use them without prior written consent.</p>
-            
-            <h3>6. Governing Law</h3>
-            <p>These Terms are governed by the laws of India. Disputes shall be subject to the exclusive jurisdiction of courts in Kochi, Kerala.</p>
-            
-            <div class="highlight">
-                <p><strong>Note:</strong> We may update these Terms. We'll post the revised Terms with a new effective date. Continued use constitutes acceptance.</p>
-            </div>
-        </div>
-        
-        <!-- Privacy Policy -->
-        <div id="privacy" class="content-section">
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective Date:</strong> September 11, 2023</p>
-            
-            <h3>1. Introduction</h3>
-            <p>We respect your privacy. This policy explains what personal data we collect, how we use it, with whom we share it, and your rights.</p>
-            
-            <h3>2. Data We Collect</h3>
-            <ul>
-                <li><strong>Account info:</strong> name, email, phone, address.</li>
-                <li><strong>Transactional data:</strong> order details, payment confirmations.</li>
-                <li><strong>Device & usage data:</strong> IP address, device identifiers, crash logs, analytics.</li>
-                <li><strong>Optional:</strong> photos, documents you upload for verification or service delivery.</li>
-            </ul>
-            
-            <h3>3. How We Use Data</h3>
-            <ul>
-                <li>Provide and improve services, process orders and payments</li>
-                <li>Personalize user experience and deliver customer support</li>
-                <li>Fraud detection, security, and legal compliance</li>
-                <li>Marketing (only with consent); you may opt out anytime</li>
-            </ul>
-            
-            <h3>4. Data Security</h3>
-            <p>We use administrative, technical, and physical safeguards to protect data. However, no method is 100% secure.</p>
-            
-            <h3>5. Your Rights</h3>
-            <p>You have rights to access, correction, deletion, portability, objection to processing, and withdraw consent where applicable.</p>
-            
-            <div class="highlight">
-                <p><strong>Contact for Privacy Concerns:</strong> privacy@byteboot.in</p>
-            </div>
-        </div>
-        
-        <!-- Shipping Policy -->
-        <div id="shipping" class="content-section">
-            <h2>Shipping Policy</h2>
-            <p><strong>Effective Date:</strong> September 11, 2023</p>
-            
-            <h3>1. Processing Time</h3>
-            <p>Orders are processed within <strong>1–3 business days</strong> (unless otherwise stated). Processing may be longer during peak seasons.</p>
-            
-            <h3>2. Shipping Methods & Timeframes</h3>
-            <ul>
-                <li><strong>Standard shipping:</strong> 3–7 business days (domestic)</li>
-                <li><strong>Express shipping:</strong> 1–3 business days (available for select areas)</li>
-            </ul>
-            <p>Actual delivery depends on courier partner and location.</p>
-            
-            <h3>3. Shipping Charges</h3>
-            <p>Shipping charges vary by weight, dimensions, and delivery address. Shipping costs will be shown at checkout.</p>
-            
-            <h3>4. International Shipping</h3>
-            <p>International orders may be subject to customs duties, taxes and longer transit times. Recipient is responsible for import charges.</p>
-            
-            <h3>5. Lost, Damaged or Delayed Shipments</h3>
-            <p>Report lost/damaged items within <strong>48 hours</strong> of delivery to <strong>support@byteboot.in</strong> with order number and photos (if damaged).</p>
-            
-            <div class="highlight">
-                <p><strong>Note:</strong> If a shipment is returned to us (wrong address, refused, undeliverable), reshipment may incur extra charges.</p>
-            </div>
-        </div>
-        
-        <!-- Contact Us -->
-        <div id="contact" class="content-section">
+        <section id="contact" class="section">
             <h2>Contact Us</h2>
-            <p>We're here to help! Reach out to us through any of the following channels:</p>
+            <p>You may contact us using the information below:</p>
             
             <div class="contact-info">
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Support</h3>
+                <div class="info-card">
+                    <h3>Merchant Legal Entity</h3>
+                    <p>Maharajahub</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Registered Address</h3>
+                    <p>SHOP No.2, 9/486/B, MOONNUPLAVIL VADAKKETHIL, KALAVEDI JUNCTION, KALAVEDI JUNCTION, THUMPAMON NORTH P.O, Tumbaman Tazham, Pathanamthitta, Kerala, 689625 Thumpamon Thazham BO KERALA 689625</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Operational Address</h3>
+                    <p>SHOP No.2, 9/486/B, MOONNUPLAVIL VADAKKETHIL, KALAVEDI JUNCTION, KALAVEDI JUNCTION, THUMPAMON NORTH P.O, Tumbaman Tazham, Pathanamthitta, Kerala, 689625 Thumpamon Thazham BO KERALA 689625</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Telephone</h3>
+                    <p>9422755307</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Email</h3>
                     <p>maharajahublk@gmail.com</p>
-                    <p>For general inquiries and support</p>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Phone Support</h3>
-                    <p>+91-9422755307</p>
-                    <p>Mon-Sat, 10:00 AM - 6:00 PM IST</p>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Office Addr ess</h3>
-                    <p>Maharajahub </p>
-                    <p>Pathanmthitta,Kerala India</p>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Business Hours</h3>
-                    <p>Monday to Saturday</p>
-                    <p>10:00 AM - 6:00 PM IST</p>
                 </div>
             </div>
-            
-            <div class="highlight">
-                <p><strong>For faster support:</strong> Include your order ID / account email / device details in your message.</p>
-            </div>
-        </div>
+        </section>
         
-        <!-- Cancellation & Refunds -->
-        <div id="refunds" class="content-section">
-            <h2>Cancellation & Refund Policy</h2>
-            <p><strong>Effective Date:</strong> September 11, 2023</p>
-            
-            <h3>1. Cancellation by User</h3>
-            <p>You may cancel an order before it is shipped. To cancel, contact <strong>support@byteboot.in</strong> with your order ID.</p>
-            
-            <h3>2. Cancellation by Us</h3>
-            <p>We may cancel orders due to unavailability, pricing errors, or suspected fraud. If we cancel, you will be notified and receive a full refund.</p>
-            
-            <h3>3. Returns</h3>
-            <p>Returns accepted within <strong>7–15 days</strong> from delivery depending on product category. Product must be unused, in original packaging, with all tags and accessories.</p>
-            
-            <h3>4. Refunds</h3>
-            <p>Refunds issued after we receive and inspect returned items. Refund method: original payment method. Time to reflect: typically <strong>5–14 business days</strong> depending on bank/payment processor.</p>
-            
-            <h3>5. How to Request a Refund</h3>
-            <p>Email <strong>support@byteboot.in</strong> with order ID, reason, and photos if applicable. We'll acknowledge and guide you through the process.</p>
-            
-            <div class="highlight">
-                <p><strong>Note:</strong> If you initiate a chargeback without contacting us first, your account may be suspended.</p>
+        <section id="privacy" class="section">
+            <h2>Privacy Policy</h2>
+            <div class="policy-content">
+                <p>This privacy policy sets out how Maharajahub uses and protects any information that you give Maharajahub when you visit their website and/or agree to purchase from them.</p>
+                
+                <p>Maharajahub is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, and then you can be assured that it will only be used in accordance with this privacy statement.</p>
+                
+                <p>Maharajahub may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you adhere to these changes.</p>
+                
+                <h3>We may collect the following information:</h3>
+                <ul>
+                    <li>Name</li>
+                    <li>Contact information including email address</li>
+                    <li>Demographic information such as postcode, preferences and interests, if required</li>
+                    <li>Other information relevant to customer surveys and/or offers</li>
+                </ul>
+                
+                <h3>What we do with the information we gather</h3>
+                <p>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons:</p>
+                <ul>
+                    <li>Internal record keeping.</li>
+                    <li>We may use the information to improve our products and services.</li>
+                    <li>We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided.</li>
+                    <li>From time to time, we may also use your information to contact you for market research purposes.</li>
+                    <li>We may contact you by email, phone, fax or mail.</li>
+                    <li>We may use the information to customise the website according to your interests.</li>
+                </ul>
+                
+                <p>We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure we have put in suitable measures.</p>
+                
+                <h3>How we use cookies</h3>
+                <p>A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site.</p>
+                
+                <p>Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences.</p>
+                
+                <p>We use traffic log cookies to identify which pages are being used. This helps us analyze data about webpage traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.</p>
+                
+                <p>Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.</p>
+                
+                <p>You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.</p>
+                
+                <h3>Controlling your personal information</h3>
+                <p>You may choose to restrict the collection or use of your personal information in the following ways:</p>
+                
+                <ul>
+                    <li>whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes</li>
+                    <li>if you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by writing to or emailing us at maharajahublk@gmail.com</li>
+                </ul>
+                
+                <p>We will not sell, distribute or lease your personal information to third parties unless we have your permission or are required by law to do so. We may use your personal information to send you promotional information about third parties which we think you may find interesting if you tell us that you wish this to happen.</p>
+                
+                <p>If you believe that any information we are holding on you is incorrect or incomplete, please write to SHOP No.2, 9/486/B, MOONNUPLAVIL VADAKKETHIL, KALAVEDI JUNCTION, KALAVEDI JUNCTION, THUMPAMON NORTH P.O, Tumbaman Tazham, Pathanamthitta, Kerala, 689625 Thumpamon Thazham BO KERALA 689625 or contact us at 9422755307 or maharajahublk@gmail.com as soon as possible. We will promptly correct any information found to be incorrect.</p>
             </div>
-        </div>
+        </section>
+        
+        <section id="terms" class="section">
+            <h2>Terms and Conditions</h2>
+            <div class="terms-content">
+                <p>For the purpose of these Terms and Conditions, The term "we", "us", "our" used anywhere on this page shall mean Maharajahub, whose registered/operational office is SHOP No.2, 9/486/B, MOONNUPLAVIL VADAKKETHIL, KALAVEDI JUNCTION, KALAVEDI JUNCTION, THUMPAMON NORTH P.O, Tumbaman Tazham, Pathanamthitta, Kerala, 689625 Thumpamon Thazham BO KERALA 689625.</p>
+                
+                <p>"you", "your", "user", "visitor" shall mean any natural or legal person who is visiting our website and/or agreed to purchase from us.</p>
+                
+                <p>Your use of the website and/or purchase from us are governed by following Terms and Conditions:</p>
+                
+                <p>The content of the pages of this website is subject to change without notice. Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose.</p>
+                
+                <p>You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</p>
+                
+                <p>Your use of any information or materials on our website and/or product pages is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through our website and/or product pages meet your specific requirements.</p>
+                
+                <p>Our website contains material which is owned by or licensed to us. This material includes, but are not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.</p>
+                
+                <p>All trademarks reproduced in our website which are not the property of, or licensed to, the operator are acknowledged on the website. Unauthorized use of information provided by us shall give rise to a claim for damages and/or be a criminal offense.</p>
+                
+                <p>From time to time our website may also include links to other websites. These links are provided for your convenience to provide further information. You may not create a link to our website from another website or document without Maharajahub's prior written consent.</p>
+                
+                <p>Any dispute arising out of use of our website and/or purchase with us and/or any engagement with us is subject to the laws of India.</p>
+                
+                <p>We, shall be under no liability whatsoever in respect of any loss or damage arising directly or indirectly out of the decline of authorization for any Transaction, on Account of the Cardholder having exceeded the preset limit mutually agreed by us with our acquiring bank from time to time.</p>
+            </div>
+        </section>
+        
+        <section id="cancellation" class="section">
+            <h2>Cancellation and Refund Policy</h2>
+            <div class="cancellation-content">
+                <p>Maharajahub believes in helping its customers as far as possible, and has therefore a liberal cancellation policy. Under this policy:</p>
+                
+                <ul>
+                    <li>Cancellations will be considered only if the request is made within 3-5 days of placing the order.</li>
+                    <li>However, the cancellation request may not be entertained if the orders have been communicated to the vendors/merchants and they have initiated the process of shipping them.</li>
+                    <li>Maharajahub does not accept cancellation requests for perishable items like flowers, eatables etc.</li>
+                    <li>However, refund/replacement can be made if the customer establishes that the quality of product delivered is not good.</li>
+                    <li>In case of receipt of damaged or defective items please report the same to our Customer Service team.</li>
+                    <li>The request will, however, be entertained once the merchant has checked and determined the same at his own end.</li>
+                    <li>This should be reported within 3-5 days of receipt of the products.</li>
+                    <li>In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within 3-5 days of receiving the product.</li>
+                    <li>The Customer Service Team after looking into your complaint will take an appropriate decision.</li>
+                    <li>In case of complaints regarding products that come with a warranty from manufacturers, please refer the issue to them.</li>
+                    <li>In case of any Refunds approved by the Maharajahub, it'll take 3-5 days for the refund to be processed to the end customer.</li>
+                </ul>
+            </div>
+        </section>
     </div>
     
     <footer>
-        <p>Maharajahub  &copy; 2023. All rights reserved.</p>
-        <p>These policies are provided for Razorpay integration and general customer information.</p>
+        <div class="container">
+            <p>&copy; 2023 Maharajahub. All rights reserved.</p>
+        </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.nav-tab');
-            const sections = document.querySelectorAll('.content-section');
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const target = this.getAttribute('data-target');
-                    
-                    // Remove active class from all tabs and sections
-                    tabs.forEach(t => t.classList.remove('active'));
-                    sections.forEach(s => s.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding section
-                    this.classList.add('active');
-                    document.getElementById(target).classList.add('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
