@@ -14,6 +14,7 @@
             --light: #f8f9fa;
             --dark: #222;
             --text: #444;
+            --header-bg: #081525;
         }
         
         * {
@@ -101,14 +102,15 @@
             margin: 20px auto 0;
         }
         
-        /* Header Styles */
+        /* Header Styles - FIXED */
         header {
-            background-color:#081525;
+            background-color: var(--header-bg);
             color: white;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            width: 100%;
         }
         
         .header-container {
@@ -116,7 +118,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            color: white;
         }
         
         .logo {
@@ -124,38 +125,49 @@
             align-items: center;
         }
         
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .logo-img img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
         .logo h1 {
             font-size: 1.8rem;
-            color: var(--primary);
-            margin-left: 10px;
+            color: #fff;
             font-weight: 700;
         }
         
         .logo span {
-            color: var(--secondary);
-            font-weight: 300;
+            color: var(--primary);
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            color: white;
         }
         
         nav ul li {
             margin-left: 25px;
-            color: white;
-
         }
         
         nav ul li a {
             text-decoration: none;
-            color: var(--secondary);
-            color: white;
-
+            color: #fff;
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            padding: 5px 0;
         }
         
         nav ul li a:after {
@@ -181,16 +193,17 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--secondary);
+            color: #fff;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
             background-size: cover;
             background-position: center;
             padding: 100px 0;
             text-align: center;
+            color: #fff;
         }
         
         .hero-content {
@@ -201,14 +214,14 @@
         .hero-content h2 {
             font-size: 2.8rem;
             margin-bottom: 20px;
-            color: var(--dark);
+            color: #fff;
             line-height: 1.2;
         }
         
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #555;
+            color: #eee;
         }
         
         .hero-buttons {
@@ -590,27 +603,27 @@
             
             nav {
                 position: fixed;
-                top: 70px;
-                left: -100%;
+                top: 80px;
+                right: -100%;
                 width: 80%;
-                height: calc(100vh - 70px);
-                background: #fff;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                transition: all 0.3s ease;
-                z-index: 99;
+                height: calc(100vh - 80px);
+                background: var(--header-bg);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+                transition: all 0.4s ease;
+                z-index: 999;
             }
             
             nav.active {
-                left: 0;
+                right: 0;
             }
             
             nav ul {
                 flex-direction: column;
-                padding: 20px;
+                padding: 30px;
             }
             
             nav ul li {
-                margin: 15px 0;
+                margin: 20px 0;
             }
             
             .hero-content h2 {
@@ -623,6 +636,7 @@
             
             .hero-buttons {
                 flex-direction: column;
+                gap: 10px;
             }
             
             .section-title h2 {
@@ -650,6 +664,10 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -658,8 +676,9 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                    <img style="width:50px;" src="/Images/logoN.jpg" alt="">
-                <i class="fas fa-tire fa-2x" style="color: #d90000;"></i>
+                <div class="logo-img">
+                    <img src="/Images/logoN.jpg" alt="Maharaja Hub Logo">
+                </div>
                 <h1>Maharaja <span>Hub</span></h1>
             </div>
             
@@ -667,14 +686,13 @@
                 <i class="fas fa-bars"></i>
             </div>
             
-            <nav>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">SAS Model</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#product">Products</a></li>
+                    <li><a href="#sas">SAS Model</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -695,7 +713,7 @@
     </section>
 
     <!-- Products Section -->
-    <section class="products">
+    <section class="products" id="product">
         <div class="container">
             <div class="section-title">
                 <h2>Our Products</h2>
@@ -740,7 +758,7 @@
     </section>
 
     <!-- SAS Model Section -->
-    <section class="sas-model">
+    <section class="sas-model" id="sas">
         <div class="container">
             <div class="section-title">
                 <h2>Our SAS Service Model</h2>
@@ -787,7 +805,7 @@
     </section>
 
     <!-- New Services Section -->
-    <section class="new-services">
+    <section class="new-services" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our Specialized Services</h2>
@@ -823,13 +841,13 @@
                         </div>
                     </div>
                     <p>Available on Playstore Soon</p>
-                    <a href="/wheelInfo.apk" class="btn" style="margin-top: 20px;">Downloard App Now</a>
-                    <a href="policy.html" class="btn" style="margin-top: 20px;">View Details</a>
+                    <a href="/wheelInfo.apk" class="btn" style="margin-top: 20px;">Download App Now</a>
+                    <a href="policy.html" class="btn btn-outline" style="margin-top: 20px;">Policy</a>
                 </div>
                 
                 <div class="service-image">
                     <div class="mobile-mockup">
-                        <img src="/Images/logo.jpg" alt="iPhone Mockup">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" alt="Mobile Phone">
                         <div class="mobile-screen">
                             <img src="/Images/logo.jpg" alt="Wheel Alignment App Screen">
                         </div>
@@ -931,7 +949,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container" id="Contact">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Maharaja Hub</h3>
@@ -944,20 +962,12 @@
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <a href="#">Home</a>
-                    <a href="#">Products</a>
-                    <a href="#">SAS Solutions</a>
-                    <a href="#">Services</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
-                </div>
+             
                 
                 <div class="footer-column">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Auto Nagar, Mumbai, India</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Thumpamon Elavinthitta,Pathanamthitta kerala</p>
+                    <p><i class="fas fa-phone"></i>+91 94227 55307</p>
                     <p><i class="fas fa-envelope"></i> info@maharajahub.com</p>
                 </div>
                 
@@ -980,21 +990,40 @@
     <script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
+        const nav = document.getElementById('main-nav');
+        const body = document.body;
         
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             nav.classList.toggle('active');
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
+            
+            if (nav.classList.contains('active')) {
+                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
         });
         
         // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        document.addEventListener('click', function(e) {
+            if (nav.classList.contains('active') && !nav.contains(e.target) && e.target !== menuToggle) {
                 nav.classList.remove('active');
-                menuToggle.querySelector('i').classList.add('fa-bars');
-                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             }
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Prevent clicks inside nav from closing the menu
+        nav.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
     </script>
 </body>
